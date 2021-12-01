@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="IndoorPositionApp.Pages.DataCharts" >
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Lista" BackgroundColor="#FFFFFF">
+        <ContentPage.Content>
+            <Grid>
+                <StackLayout Grid.Row="0"
+                             Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             Padding="0,0,0,250" 
+                             BackgroundColor="#FFFFFF">
+
+                    <Entry x:Name="txtSearchTest"
+                           Placeholder="# Prueba"
+                           BackgroundColor="#FFFFFF" 
+                           PlaceholderColor="#00425D" 
+                           TextColor="#00425D"/>
+
+                    <Entry x:Name="txtSearchModem"
+                           Placeholder="# Router"
+                           BackgroundColor="#FFFFFF" 
+                           PlaceholderColor="#00425D" 
+                           TextColor="#00425D" />
+
+                    <Button x:Name="btnSearch"
+                            Text="Buscar"
+                            HorizontalOptions="Center"
+                            Clicked="btnSearch_Clicked" 
+                            BackgroundColor="#4793D2" 
+                            CornerRadius="15" 
+                            TextColor="#FFFFFF"/>
+                    
+                    <Button x:Name="btnExport"
+                            Text="Exportar"
+                            HorizontalOptions="Center"
+                            Clicked="btnExport_Clicked"
+                            BackgroundColor="#4793D2" 
+                            CornerRadius="15" 
+                            TextColor="#FFFFFF"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                             Orientation="Vertical" 
+                             Padding="0,-250,0,0" 
+                             BackgroundColor="#FFFFFF">
+
+                    <Grid>
+                        <Label Text="Prueba" 
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="1"
+                               Text="Router"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="2"
+                               Text="Coord."
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="3"
+                               Text="RSSI"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="4"
+                               Text="Dist."
+                               TextColor="#9D9D9D"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                             Orientation="Vertical" 
+                             Padding="0,-230,0,0"
+                             BackgroundColor="#FFFFFF">
+
+                    <ListView   x:Name="testList" VerticalScrollBarVisibility="Always" BackgroundColor="#FFFFFF">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Label Text="{Binding IdT}" 
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding IdM}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="2"
+                                               Text="{Binding XY}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="3"
+                                               Text="{Binding RSSI}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="4"
+                                               Text="{Binding Distance}"
+                                               TextColor="#000000"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Button x:Name="btnDelete"
+                        Text="Borrar Test"
+                        HorizontalOptions="Center"
+                        Clicked="btnDelete_Clicked" 
+                        BackgroundColor="#4E0404" 
+                        TextColor="#FFFCFC" 
+                        CornerRadius="15"/>
+                </StackLayout>
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Muestras" BackgroundColor="#FFFFFF">
+        <ContentPage.Content>
+            <Grid>
+                <StackLayout Grid.Row="0"
+                             Orientation="Vertical"
+                             Padding="0,0,0,0" 
+                             BackgroundColor="#FFFDFD">
+
+                    <Label Text="VALORES RSSI PROMEDIO Y K AJUSTADO POR PRUEBA" 
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="#000000"/>
+
+
+                    <Picker x:Name="routerPicker"
+                            SelectedIndexChanged="routerPicker_SelectedIndexChanged"
+                            BackgroundColor="#57A5F7" 
+                            TextColor="#500202"
+                            Title="&lt;-Seleccione Router->"
+                            HorizontalTextAlignment="Center" 
+                            TitleColor="#670505"/>
+
+                    <Grid>
+                        <Label Text="Distancia a emisor" 
+                               TextColor="#00425D"/>
+                        <Label x:Name="disRouter" 
+                               Grid.Column="1"
+                               TextColor="#00425D"/>
+                        <Label Text="RSSI Promedio" 
+                               Grid.Column="2"
+                               TextColor="#00425D"/>
+                        <Label x:Name="meanRouter" 
+                               Grid.Column="3"
+                               TextColor="#00425D"/>
+                    </Grid>
+
+                    <Button x:Name="btnExport2"
+                            Text="Exportar"
+                            HorizontalOptions="Center"
+                            Clicked="btnExport2_Clicked"
+                            BackgroundColor="#75B3E8" 
+                            CornerRadius="15" 
+                            TextColor="#FFFFFF"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                     Orientation="Vertical" Padding="0,-150,0,0" BackgroundColor="#FFFFFF">
+
+                    <Grid>
+                        <Label Text="M"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="1"
+                               Text="Dat"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="2"
+                               Text="R1"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="3"
+                               Text="R2"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="4"
+                               Text="R3"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="5"
+                               Text="R4"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="6"
+                               Text="R5"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="7"
+                               Text="R6"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="8"
+                               Text="R7"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="9"
+                               Text="R8"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="10"
+                               Text="R9"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="11"
+                               Text="R10"
+                               TextColor="#9D9D9D"/>
+                        
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                     Orientation="Vertical" Padding="0,-130,0,0">
+
+                    <ListView   x:Name="sampleList" VerticalScrollBarVisibility="Always" BackgroundColor="#FFFFFF">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Label Text="{Binding Samples}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Data}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="2"
+                                                Text="{Binding Router1}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="3"
+                                                Text="{Binding Router2}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="4"
+                                                Text="{Binding Router3}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="5"
+                                                Text="{Binding Router4}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="6"
+                                                Text="{Binding Router5}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="7"
+                                                Text="{Binding Router6}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="8"
+                                                Text="{Binding Router7}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="9"
+                                                Text="{Binding Router8}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="10"
+                                                Text="{Binding Router9}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="11"
+                                                Text="{Binding Router10}"
+                                               TextColor="#000000"/>
+                                        
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+    <ContentPage Title="Coordenadas" BackgroundColor="#FFFFFF">
+        <ContentPage.Content>
+            <Grid>
+                <StackLayout Grid.Row="0"
+                            Orientation="Vertical"
+                            Padding="0,0,0,0"
+                            BackgroundColor="#FFFFFF">
+
+                    <Label HorizontalOptions="Center"
+                           Text="INTENSIDAD RSSI Y COORDENADAS POR PRUEBA" TextColor="#000000"/>
+
+                    <Label HorizontalOptions="Center"
+                           Text="Coordenadas Reales: " 
+                           TextColor="#9D9D9D"/>
+                    <Label x:Name="realCo" 
+                           HorizontalOptions="Center" 
+                           TextColor="#000000"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                             Orientation="Vertical" 
+                             Padding="0,-195,0,0" 
+                             BackgroundColor="#FFFFFF">
+
+                    <Grid>
+                        <Label Text="X(m)" 
+                               Grid.Column="0"
+                               TextColor="#9D9D9D"/>
+                        <Label Text="Y(m)" 
+                               Grid.Column="1"
+                               TextColor="#9D9D9D"/>
+                        <Label Text="Error X"
+                               Grid.Column="2"
+                               TextColor="#9D9D9D"/>
+                        <Label Text="Error Y" 
+                               Grid.Column="3"
+                               TextColor="#9D9D9D"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                     Orientation="Vertical" Padding="0,-180,0,0">
+
+                    <Grid>
+                        <Label x:Name="coorX" 
+                               Text="x"
+                               Grid.Column="0"
+                               TextColor="#000000"/>
+                        <Label x:Name="coorY" 
+                               Text="y"
+                               Grid.Column="1"
+                               TextColor="#000000"/>
+                        <Label x:Name="errorX" 
+                               Text="z"
+                               Grid.Column="2"
+                               TextColor="#000000"/>
+                        <Label x:Name="errorY" 
+                               Text="c"
+                               Grid.Column="3"
+                               TextColor="#000000"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                             Orientation="Vertical" 
+                             Padding="0,-155,0,0"
+                             BackgroundColor="#FFFFFF">
+
+                    <Label HorizontalOptions="Center"
+                           Text="Intensidad de RSSI (dB)"
+                           TextColor="#000000"/>
+
+                    <Grid>
+                        <Label Text="Router"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="1"
+                               Text="Minimo"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="2"
+                               Text="Maximo"
+                               TextColor="#9D9D9D"/>
+                        <Label Grid.Column="3"
+                               Text="Media"
+                               TextColor="#9D9D9D"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1"
+                             Orientation="Vertical" 
+                             Padding="0,-110,0,0" 
+                             BackgroundColor="#FFFFFF">
+
+                    <ListView   x:Name="parameterList" VerticalScrollBarVisibility="Always" BackgroundColor="#FFFFFF" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Label Text="{Binding Routers}" 
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Minimum}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="2"
+                                               Text="{Binding Maximum}"
+                                               TextColor="#000000"/>
+                                        <Label Grid.Column="3"
+                                               Text="{Binding Mean}"
+                                               TextColor="#000000"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

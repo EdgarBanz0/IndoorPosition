@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Login"
+             Title="NOMBRE APP"
+             BackgroundColor="White"
+             >
+    <ContentPage.Content>
+
+        <ScrollView 
+            >
+
+            <StackLayout 
+                Orientation="Vertical"
+                Padding="30,50">
+
+                <Label 
+                    Text="Iniciar Sesión "
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    VerticalOptions="Start"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Image Source="logoLog.PNG"
+                       HorizontalOptions="Center"
+                       HeightRequest="120"/>
+
+                <Entry  Margin="0,20"
+                        x:Name="txtEmail"
+                        Placeholder="E-mail"
+                        PlaceholderColor="#8C9AFF"
+                        TextColor="Black"
+                   >
+                </Entry>
+                <StackLayout Orientation="Horizontal">
+                    <Entry  x:Name="txtPassword"
+                            TextColor="Black"
+                            Placeholder="Contraseña"
+                            PlaceholderColor="#8C9AFF"
+                            IsPassword="True"
+                            WidthRequest="250">
+                    </Entry>
+
+
+                    <ImageButton x:Name="seePas2"
+                                Clicked="seePas2_Clicked"
+                                Source="ojo.png"
+                                BackgroundColor="Transparent"
+                                WidthRequest="30"
+                                HorizontalOptions="End"/>
+
+                </StackLayout>
+
+
+
+                <Label
+                        HorizontalOptions="Center"
+                        Text="¿Olvidaste tu contraseña??"
+                        TextColor="Blue">
+
+                </Label>
+
+                <ActivityIndicator
+                  >
+
+                </ActivityIndicator>
+
+
+
+
+                <StackLayout
+                    Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        >
+
+                    <Label Text="Recordarme" 
+                           TextColor="#7A0000"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+
+                    </Label>
+                    <Switch
+                        HorizontalOptions="End"
+                        IsToggled="true"
+                        
+                        x:Name="swtMan" >
+                    </Switch>
+                </StackLayout>
+
+
+
+
+                <Grid Margin="20">
+
+
+                    <Button x:Name="btnLogin"
+                    Grid.Column="1"
+                    Text=" Iniciar  "
+                    BorderRadius="23"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    Clicked="btnLogin_Clicked"
+                    FontAttributes="Bold"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#00D2FF" 
+                    FontSize="15"
+
+                    />
+
+                    <Button x:Name="btnReg"
+                    Grid.Column="0"
+                    Text="Registrar"
+                    HorizontalOptions="FillAndExpand"
+                    BorderRadius="23"
+                    VerticalOptions="Center"
+                    Clicked="btnReg_Clicked"
+                 
+                    FontAttributes="Bold"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#00D2FF" 
+                    FontSize="15"/>
+
+                </Grid>
+
+
+
+
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

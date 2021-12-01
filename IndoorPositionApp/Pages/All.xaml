@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.All"
+             Title="Menú principal">
+
+    <ScrollView>
+    <StackLayout Margin="15">
+        <Label Text="Usuarios Registrados" FontSize="24"
+                       FontAttributes="Bold" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"  Text="ID" FontAttributes="Bold" />
+            <Label Grid.Row="0" Grid.Column="1" Text="Usuario" FontAttributes="Bold"/>
+            <Label Grid.Row="0" Grid.Column="2" Text="Edad" FontAttributes="Bold"/>
+            <Label Grid.Row="0" Grid.Column="3" Text="E-mail" FontAttributes="Bold"/>
+        </Grid>
+
+        <ListView   x:Name="UserList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding Id}"/>
+                            <Label Grid.Column="1"  Text="{Binding Name}"/>
+                            <Label Grid.Column="2"
+                                   Text="{Binding Age}"/>
+                            <Label Grid.Column="3"
+                                   Text="{Binding Email}"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Search">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.15*"/>
+                    
+                </Grid.RowDefinitions>
+                <Label 
+                       Padding="20,50,20,20"
+                       Text="Busqueda de usuario"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Grid.Row="0"/>
+                
+                <StackLayout Grid.Row="1"
+                     Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Padding="20,0,20,20">
+
+
+                    <Entry x:Name="txtSearch"
+                   Placeholder="ID"
+                   />
+
+                    <Button x:Name="btnSearch"
+                    Text="Buscar"
+                    HorizontalOptions="End"
+                    Clicked="btnSearch_Clicked"
+                    BackgroundColor="#00BEFF"
+                    CornerRadius="18"
+                    />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2"
+                     Orientation="Vertical"
+                     Padding="20,20,20,20">
+
+
+                    <Label Text="Usuario:"></Label>
+                    <Entry  x:Name="txtName"
+                    IsEnabled="False"
+                    Placeholder="Usuario"/>
+                    <Label Text="Edad:"></Label>
+                    <Entry  x:Name="txtAge"
+                    IsEnabled="False"
+                    Placeholder="Edad"/>
+
+                    <Label Text="E-mail:"></Label>
+                    <Entry  x:Name="txtEmail"
+                    IsEnabled="False"
+                    Placeholder="E-mail"/>
+
+                    <Button x:Name="btnDelete"
+                Text="Eliminar usuario"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="btnDelete_Clicked" BackgroundColor="#6E0505" TextColor="#FDFDFD"/>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

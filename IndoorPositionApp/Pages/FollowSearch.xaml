@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Tracing"
+             BackgroundColor="White"
+             Title="Seguir a un nuevo usuario">
+    <ContentPage.Content>
+        
+        <Grid  VerticalOptions="Start">
+            <StackLayout Grid.Row="0"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Padding="20,100,20,70"
+                         >
+
+                <Entry x:Name="txtSearch"
+                       Placeholder="# ID"
+                       TextColor="#000000" 
+                       PlaceholderColor="#000000"
+                       />
+
+                <Button x:Name="btnSearch"
+                    Text="Buscar"
+                    HorizontalOptions="End"
+                    Clicked="btnSearch_Clicked"
+                    BackgroundColor="#00BEFF"
+                    CornerRadius="18"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1"
+                         Orientation="Vertical" 
+                         Padding="20,20,20,20"
+                         >
+
+                <Entry  x:Name="txtName"
+                        Placeholder="Usuario"
+                        TextColor="#000000" 
+                        PlaceholderColor="#000000"
+                        BackgroundColor="#FFFFFF"/>
+
+                <Entry  x:Name="txtAge"
+                        Placeholder="Edad"
+                        TextColor="#000000" 
+                        PlaceholderColor="#000000"
+                        BackgroundColor="#FFFFFF"/>
+
+                <Entry  x:Name="txtEmail"
+                        Placeholder="Email"
+                        TextColor="#000000" 
+                        PlaceholderColor="#000000"
+                        BackgroundColor="#FFFFFF"/>
+
+                <Button x:Name="btnFollow"
+                        Text="Seguir"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        BackgroundColor="#6E0505" 
+                        TextColor="#FDFDFD"
+                        Clicked="btnFollow_Clicked"/>
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Locate2">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+                <Picker x:Name="wifiPicker1"
+                        VerticalOptions="Center"
+                        Title="Seleccione Router ^"
+                        HorizontalTextAlignment="Center"
+                        SelectedIndexChanged="wifiList_SelectedIndexChanged"
+                        BackgroundColor="#000000" 
+                        TextColor="#FFFFFF"/>
+
+                <Entry x:Name="labelIdT"
+                       HorizontalOptions="Center"
+                       Placeholder="Ingrese # Prueba"
+                       IsEnabled="True"/>
+                
+            </StackLayout>
+
+            <StackLayout Grid.Row="1"
+                     Orientation="Vertical" Padding="0,-170,0,0">
+
+                <Grid>
+                    <Entry x:Name="Modem1"
+                           Grid.Column="0"
+                           IsEnabled="False"
+                           Placeholder="Router 1"/>
+
+                    <Entry x:Name="labelRSSI1"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 1"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem2"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 2"/>
+
+                    <Entry x:Name="labelRSSI2"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 2"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem3"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 3"/>
+
+                    <Entry x:Name="labelRSSI3"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 3"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem4"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 4"/>
+
+                    <Entry x:Name="labelRSSI4"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 4"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem5"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 5"/>
+
+                    <Entry x:Name="labelRSSI5"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 5"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem6"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 6"/>
+
+                    <Entry x:Name="labelRSSI6"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 6"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem7"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 7"/>
+
+                    <Entry x:Name="labelRSSI7"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 7"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem8"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 8"/>
+
+                    <Entry x:Name="labelRSSI8"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 8"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem9"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 9"/>
+
+                    <Entry x:Name="labelRSSI9"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 9"/>
+                </Grid>
+
+                <Grid Padding="0,-15,0,0">
+                    <Entry x:Name="Modem10"
+                           Grid.Column="0"
+                            IsEnabled="False"
+                            Placeholder="Router 10"/>
+
+                    <Entry x:Name="labelRSSI10"
+                           Grid.Column="1"
+                            IsEnabled="False"
+                            Placeholder="RSSI 10"/>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2"
+                     Orientation="Vertical" Padding="0,0,0,0">
+
+                <Label x:Name="peripheralLabel"
+                       IsVisible="False"
+                       Text="Buscando Perifericos..."
+                       HorizontalOptions="Center" 
+                       TextColor="#E91111"
+                    />
+
+                <Grid>
+                    <ImageButton x:Name="btnRead"
+                                Clicked="btnRead_Clicked"
+                                Source="turnOn"
+                                WidthRequest="150"
+                                HeightRequest="150"
+                                BorderColor="Red"
+                                CornerRadius="75" 
+                                BackgroundColor="#000000" 
+                                Aspect="AspectFit" HorizontalOptions="Center"/>
+                    
+                </Grid>
+
+                <ProgressBar x:Name="progressBar"
+                                IsVisible="false" 
+                                ProgressColor="#F2260B"/>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

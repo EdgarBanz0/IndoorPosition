@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.MainPage">
+    <ContentPage.Content>
+        <Grid>
+
+            <Image Source="molecula.jpg"
+                   Aspect="AspectFill"/>
+            <BoxView Color="Blue"
+                     Opacity="0.3"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0"
+                       Source="positioning.png"
+                       WidthRequest="150"
+                       HeightRequest="150"
+                       Margin="0,150,0,50"/>
+
+                <StackLayout Grid.Row="1"
+                 Padding="20,20">
+
+                    <Label Text="BIENVENIDO"
+                           FontSize="40"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                            VerticalOptions="Center"
+                            HorizontalOptions="CenterAndExpand" />
+
+                    <Button x:Name="btnEnter"
+                            Text="Entrar"
+                            CornerRadius="20"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            BackgroundColor="#7B0303"
+                            TextColor="White"
+                        Clicked="btnEnter_Clicked"/>
+                </StackLayout>
+            </Grid>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

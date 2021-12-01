@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common="clr-namespace:IndoorPositionApp.Pages"
+             x:Class="IndoorPositionApp.Pages.Interface">
+    <MasterDetailPage.Master>
+        <ContentPage
+            Title="Master">
+            <StackLayout>
+                <Grid>
+                    <Image Source="molecula.jpg"
+                    HeightRequest="60"
+                           Aspect="AspectFill"/>
+                    <Label Text="Menú principal" 
+                           Padding="20,10"
+                           FontSize="24"
+                           TextColor="White"/>
+                </Grid>
+
+                <Grid>
+
+                    <StackLayout Orientation="Vertical"/>
+                    <ListView x:Name="ListMenu">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label 
+                                       Padding="25,0,10,15"
+                                       Text="{Binding Title}"
+                                       FontSize="20"
+                                       TextColor="SteelBlue" 
+                                       FontAttributes="Bold"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Button Text="Salir"
+                        x:Name="btnExit"
+                        VerticalOptions="End"
+                        IsVisible="False"
+                        IsEnabled="False"
+                        Clicked="btnExit_Clicked"
+                        BackgroundColor="#520000" 
+                        TextColor="#FFFFFF" FontAttributes="Bold"/>
+
+                </Grid>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

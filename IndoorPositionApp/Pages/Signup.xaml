@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Signup"
+             BackgroundColor="White"
+             >
+    <ScrollView>
+        
+    
+    <StackLayout Orientation="Vertical"
+                 Padding="30,50">
+
+        <Label Text="Nuevo Usuario "
+               TextColor="Black"
+               FontAttributes="Bold"
+               FontSize="Large"
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand" />
+
+        <Image Source="newUser.PNG"
+               HorizontalOptions="Center"
+               HeightRequest="120"/>
+
+        <Entry  x:Name="txtName"
+                Placeholder="Nombre"
+                PlaceholderColor="#575757"
+                TextColor="Black"/>
+
+        <Entry  x:Name="txtAge"
+                Keyboard="Telephone"
+                Placeholder="Edad"
+                PlaceholderColor="#575757"
+                TextColor="Black"/>
+
+        <Entry  x:Name="txtEmail"
+                Placeholder="E-mail"
+                PlaceholderColor="#575757"
+                TextColor="Black"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Entry  x:Name="txtPassword"
+                        Placeholder="Contraseña"
+                        PlaceholderColor="#575757"
+                        TextColor="Black"
+                        IsPassword="True"
+                        WidthRequest="253"/>
+
+                <ImageButton x:Name="seePas"
+                             Clicked="seePas_Clicked"
+                             Source="ojo.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="30"
+                             HorizontalOptions="End"/>
+            </StackLayout>
+        
+
+            <StackLayout 
+                Padding="20,20,20,0">
+                
+                <Button x:Name="btnNew"
+                        Text="Registrar"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="btnNew_Clicked" 
+                        TextColor="#FFFFFF" 
+                        BackgroundColor="#00B4FF"
+                        CornerRadius="120"/>
+
+                <Label Text="Registrar con:"
+                       TextColor="Gray"
+                       HorizontalOptions="Center"
+                       />
+
+            </StackLayout>
+
+            <Grid HorizontalOptions="End">
+            <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="Center"
+                    Padding="20,10,20,0">
+                <Image
+                        Source="logoF.jpg"
+                        WidthRequest="78">
+                </Image>
+                <Image
+                        Source="logoT.png"
+                        WidthRequest="70">
+                </Image>
+                <Image
+                        Source="logoI.png"
+                        WidthRequest="70">
+                </Image>
+            </StackLayout>
+        </Grid>
+
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:otro="clr-namespace:IndoorPositionApp.Pages"
+            x:Class="IndoorPositionApp.Pages.Precalibration"
+            Title="Calibración">
+
+    <ContentPage Title="1" BackgroundColor="#FFFFFF">
+        <ContentPage.Content>
+
+            <Label Text="Modem 1"
+                   FontSize="Title"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"/>
+            
+            
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="2" BackgroundColor="#FFFFFF"
+                 IsEnabled="False"
+                 IsTabStop="True"
+                 x:Name="calib2">
+        <ContentPage.Content >
+            <Label Text="Pa que no digan 2"/>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="3" BackgroundColor="#FFFFFF"     
+                 x:Name="calib3">
+        <ContentPage.Content >
+            <StackLayout>
+                <Label Text="Pa que no digan 3"/>
+                <Button x:Name="este"
+                    Text="ESTE"
+                    Clicked="este_Clicked"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="4" BackgroundColor="#FFFFFF"     
+                 x:Name="calib4">
+        <ContentPage.Content >
+            <StackLayout>
+                <Label Text="Pa que no digan 4"/>
+                
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+</TabbedPage>

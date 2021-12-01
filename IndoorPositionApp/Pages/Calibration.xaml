@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Calibration"
+             Title="Calibración">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White"
+              x:Name="fondo">
+
+            <StackLayout>
+                <Picker x:Name="wifiPicker1"
+                        VerticalOptions="Center"
+                        Title="Seleccione Router ^"
+                        HorizontalTextAlignment="Center"
+                        SelectedIndexChanged="wifiList_SelectedIndexChanged"
+                        BackgroundColor="#0768A2" 
+                        TextColor="#FFFFFF" 
+                        TitleColor="#FFFFFF"/>
+            </StackLayout>
+
+            <StackLayout 
+                Grid.Row="0"
+                Orientation="Vertical"
+                VerticalOptions="Center"
+                Padding="32"
+                Spacing="10">
+
+
+
+                <Label 
+                    x:Name="Message0"
+                    TextColor="#0768A2"
+                    Text="Paso 1: Seleccione todos los routers a calibrar"
+                    FontSize="19"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalTextAlignment="Center" 
+                    HorizontalTextAlignment="Center" />
+
+                <Label x:Name="peripheralLabel"
+                       Text="Routers por seleccionar..."
+                       HorizontalOptions="Center" 
+                       TextColor="#E91111"/>
+
+                <Label x:Name="calibrationLabel"
+                       Text="Router a calibrar: "
+                       HorizontalOptions="Center" 
+                       TextColor="#E91111" 
+                       IsVisible="False"/>
+
+                <ProgressBar
+                    x:Name="progressBar"
+                    IsVisible="False" 
+                    ProgressColor="#0BB7F2"/>
+
+
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                VerticalOptions="Fill" 
+                Padding="0,-30,0,50"
+                >
+
+                <Image Source="mazul.png"
+                       Aspect="AspectFit"
+                       x:Name="imagen"
+                       />
+
+                <Label 
+                    x:Name="labelRssi"
+                    Text=" RSSI"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    TextColor="#0768A2" 
+                    FontSize="17"
+                    IsVisible="False"/>
+
+                <Label 
+                    x:Name="labelValueRssi"
+                    Text="0"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="#0768A2" 
+                    FontSize="15"
+                    IsVisible="False"/>
+
+                <Label 
+                    x:Name="labelk"
+                    Text=" Valor K"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="#0768A2" 
+                    FontSize="17"
+                    IsVisible="False"/>
+
+                <Label 
+                    x:Name="labelValueK"
+                    Text="0"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="#0768A2" 
+                    FontSize="15"
+                    IsVisible="False"
+/>
+
+                <Button x:Name="btnStart"
+                    Text="Empezar"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False"
+                    Clicked="btnStart_Clicked" BackgroundColor="#00AAFF"/>
+
+                <Button x:Name="btnIrLoc"
+                    Text="Ir a Localización"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False"
+                    Clicked="btnIrLoc_Clicked" 
+                    BackgroundColor="#00AAFF"/>
+
+                <Button x:Name="btnIrDat"
+                    Text="Ir a Datos"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False"
+                    Clicked="btnIrDat_Clicked"
+                    BackgroundColor="#00AAFF"/>
+
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

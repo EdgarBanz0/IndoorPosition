@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IndoorPositionApp.Pages.Perfil">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.25*"/>
+                    <RowDefinition Height="0.15*"/>
+
+                </Grid.RowDefinitions>
+                <Label 
+                       Padding="20,50,20,20"
+                       Text="Mi perfil"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Grid.Row="0"/>
+
+           
+                <StackLayout Grid.Row="2"
+                     Orientation="Vertical"
+                     Padding="20,20,20,20">
+
+
+                    <Label Text="Usuario:"></Label>
+                    
+                    <Entry  x:Name="txtName"
+                    IsEnabled="False"
+                    Placeholder="Usuario"/>
+                    
+                    <Label Text="Edad:"></Label>
+                    <Entry  x:Name="txtAge"
+                    IsEnabled="False"
+                    Placeholder="Edad"/>
+
+                    <Label Text="E-mail:"></Label>
+                    <Entry  x:Name="txtEmail"
+                    IsEnabled="False"
+                    Placeholder="E-mail"/>
+
+                    <Label Text="Contraseña:"></Label>
+                    <Entry  x:Name="txtPassword"
+                    IsEnabled="False"
+                    Placeholder="Contraseña"
+                    IsPassword="True"/>
+
+                    <Button x:Name="btnMOD"
+                Text="Modificar"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="btnMOD_Clicked" 
+                BackgroundColor="#66ccff" 
+                TextColor="#FDFDFD"/>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
